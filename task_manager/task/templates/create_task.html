@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+    {% block title %}
+    <title>Create task</title>
+    {% endblock %}
+<body>
+{% block content %}
+<form id="create_form" method="post" action="{% url 'form_task' %}">
+    {% csrf_token %}
+    {{ form }}
+    </form>
+    <button form="create_form" type="submit">Create task</button>
+    <p><a href="{% url 'actual_tasks' %}">Show current tasks?</a></p>
+{% endblock %}
+</body>
